@@ -4,12 +4,12 @@ import 'bootstrap/dist/css/bootstrap.css';
 import '../app.css';
 import AppNav from '../components/AppNav';
 
-// TODO: fix linting issue
-// eslint-disable-next-line react/prop-types
 function AppLayout({ children }) {
+  // TODO: build user menu from session
+  const userMenu = null;
   return (
     <>
-      <AppNav />
+      <AppNav userMenu={userMenu} />
       <div className="container mt-5">{children}</div>
     </>
   );
