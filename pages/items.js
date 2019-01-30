@@ -16,6 +16,10 @@ class Items extends React.Component {
       start: 1
     };
     const searchForm = { ...defaults, ...query };
+    if (!searchForm.q) {
+      // invalid search term, emulate an empty response rather than sending a request
+      return { results: [], total: 0 };
+    }
     // execute search and update state
     return searchItems({
       searchForm //,
@@ -35,13 +39,13 @@ class Items extends React.Component {
         // TODO: should we not catch here and instead
         // let users be taken to the error route?
         // see: https://nextjs.org/docs#custom-error-handling
-        this.setState({
+        return {
           pathname,
           error: e.message || e,
           results: null,
           total: 0,
           ...searchForm
-        });
+        };
       });
   }
   onParamsChange = (q, start) => {
