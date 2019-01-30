@@ -1,3 +1,9 @@
+// NOTE: these are needed to search items in server-side rendering
+// they should be excluded from the client-side bundle via package.browser
+// see: https://arunoda.me/blog/ssr-and-server-only-modules
+import 'isomorphic-fetch';
+import 'isomorphic-form-data';
+
 import React from 'react';
 import App, { Container } from 'next/app';
 import 'bootstrap/dist/css/bootstrap.css';
