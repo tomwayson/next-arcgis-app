@@ -1,5 +1,5 @@
 import React from 'react';
-// import { ItemPager } from 'react-arcgis-hub';
+import { ItemPager } from 'react-arcgis-hub';
 import AgoSearch from './AgoSearch';
 // import ExtentsMap from './ExtentsMap';
 import ItemsTable from './ItemsTable';
@@ -10,13 +10,13 @@ function ItemsLayout({ results, total, num, q, start, onParamsChange }) {
       onParamsChange(q);
     }
   }
-  // function changePage(page) {
-  //   // calculate next start record based on the number of records per page
-  //   const start = (page - 1) * num + 1;
-  //   if (onParamsChange) {
-  //     onParamsChange(q, start);
-  //   }
-  // }
+  function changePage(page) {
+    // calculate next start record based on the number of records per page
+    const start = (page - 1) * num + 1;
+    if (onParamsChange) {
+      onParamsChange(q, start);
+    }
+  }
   // compute current page number based on start record
   // and the number of records per page
   const pageNumber = (start - 1) / num + 1;
@@ -41,12 +41,12 @@ function ItemsLayout({ results, total, num, q, start, onParamsChange }) {
         <div className="col-12">
           {/* <ExtentsMap items={results} /> */}
           <ItemsTable items={results} />
-          {/* <ItemPager
+          <ItemPager
             pageSize={num}
             totalCount={total}
             pageNumber={pageNumber}
             changePage={changePage}
-          /> */}
+          />
         </div>
       </div>
     </>
