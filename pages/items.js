@@ -10,7 +10,7 @@ class Items extends React.Component {
   // see: https://nextjs.org/docs#fetching-data-and-component-lifecycle
   // NOTE: for an example of how to show a loading transition:
   // see: https://github.com/zeit/next.js/tree/canary/examples/with-loading
-  static async getInitialProps({ pathname, query }) {
+  static async getInitialProps({ pathname, query }, authentication) {
     const defaults = {
       num: 10,
       start: 1
@@ -18,13 +18,18 @@ class Items extends React.Component {
     const searchForm = { ...defaults, ...query };
     if (!searchForm.q) {
       // invalid search term, emulate an empty response rather than sending a request
-      return { results: [], total: 0 };
+      return {
+        pathname,
+        error: null,
+        results: [],
+        total: 0,
+        ...searchForm
+      };
     }
     // execute search and update state
     return searchItems({
-      searchForm //,
-      // TODO: pass session too
-      // authentication
+      searchForm,
+      authentication
     })
       .then(({ results, total }) => {
         return {

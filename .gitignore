@@ -22,3 +22,7 @@ yarn-error.log*
 
 # next.js
 .next
+
+# app
+# this is copied from node_modules by a script
+static/auth.umd.min.js
