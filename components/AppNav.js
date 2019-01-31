@@ -23,8 +23,6 @@ class AppNav extends React.Component {
   };
   render() {
     const { userMenu } = this.props;
-    // TODO: show active link based on the current route
-    // see: https://github.com/zeit/next.js/#using-a-higher-order-component
     return (
       <Navbar color="dark" dark expand="md" fixed="top">
         <NavbarBrand href="#">Ambitious ArcGIS App</NavbarBrand>
