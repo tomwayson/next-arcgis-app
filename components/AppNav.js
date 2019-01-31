@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'next/link';
+import ActiveLink from './ActiveLink';
 import {
   Collapse,
   Navbar,
@@ -32,14 +32,14 @@ class AppNav extends React.Component {
         <Collapse isOpen={this.state.isOpen} navbar>
           <Nav navbar>
             <NavItem>
-              <Link href="/">
-                <a className="nav-link">Home</a>
-              </Link>
+              <ActiveLink className="nav-link" href="/">
+                Home
+              </ActiveLink>
             </NavItem>
             <NavItem>
-              <Link href="/items">
-                <a className="nav-link">Items</a>
-              </Link>
+              <ActiveLink className="nav-link" href="/items">
+                Items
+              </ActiveLink>
             </NavItem>
           </Nav>
           <Nav navbar className="ml-auto">
