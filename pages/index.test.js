@@ -1,15 +1,16 @@
 import React from 'react';
-import { render, wait } from 'react-testing-library';
+import { render } from 'react-testing-library';
 import Index from './index';
 
 describe('smoke tests', function() {
   describe('w/o a previous session', function() {
-    it('renders app title', () => {
-      const { getByText } = render(<Index />);
-      expect(getByText('Ambitious ArcGIS App')).toBeInTheDocument();
+    const title = 'Test Title';
+    it('renders title', () => {
+      const { getByText } = render(<Index title={title} />);
+      expect(getByText(title)).toBeInTheDocument();
     });
     it('matches snapshot', () => {
-      const { asFragment } = render(<Index />);
+      const { asFragment } = render(<Index title={title} />);
       expect(asFragment()).toMatchSnapshot();
     });
   });
