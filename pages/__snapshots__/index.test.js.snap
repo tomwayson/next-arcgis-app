@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`smoke tests w/o a previous session matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="jumbotron"
+  >
+    <h1
+      class="display-3 text-light text-center mb-5"
+    >
+      Ambitious ArcGIS App
+    </h1>
+    <form
+      class="search-form undefined"
+    >
+      <div
+        class="input-group input-group-lg"
+      >
+        <input
+          class="form-control"
+          placeholder="search for items"
+          value=""
+        />
+        <div
+          class="input-group-append"
+        >
+          <button
+            class="btn btn-secondary"
+            type="submit"
+          >
+            Search
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</DocumentFragment>
+`;
