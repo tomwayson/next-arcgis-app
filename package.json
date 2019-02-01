@@ -36,6 +36,7 @@
     "@esri/arcgis-rest-request": "^1.16.0",
     "@zeit/next-css": "^1.0.1",
     "bootstrap": "^4.2.1",
+    "esri-loader": "^2.6.0",
     "isomorphic-fetch": "^2.2.1",
     "isomorphic-form-data": "^2.0.0",
     "next": "^7.0.2",
