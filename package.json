@@ -1,7 +1,7 @@
 {
   "name": "next-arcgis-app",
   "version": "1.0.0",
-  "description": "An ambitious ArcGIS application built with Next.js",
+  "description": "An example of how to use the ArcGIS platform in an application built with Next.js.",
   "main": "index.js",
   "scripts": {
     "copy:auth": "cp ./node_modules/@esri/arcgis-rest-auth/dist/umd/auth.umd.min.js ./static/auth.umd.min.js",
@@ -12,7 +12,9 @@
     "prestart": "npm run copy:auth",
     "start": "next start",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "predeploy": "npm run lint && npm run test",
+    "deploy": "now"
   },
   "repository": {
     "type": "git",
