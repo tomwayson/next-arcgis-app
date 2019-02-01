@@ -1,7 +1,7 @@
 import React from 'react';
 import { ItemPager } from 'react-arcgis-hub';
 import AgoSearch from './AgoSearch';
-// import ExtentsMap from './ExtentsMap';
+import ExtentsMap from './ExtentsMap';
 import ItemsTable from './ItemsTable';
 
 function ItemsLayout({ results, total, num, q, start, onParamsChange }) {
@@ -39,7 +39,7 @@ function ItemsLayout({ results, total, num, q, start, onParamsChange }) {
       </div>
       <div className="row">
         <div className="col-12">
-          {/* <ExtentsMap items={results} /> */}
+          <ExtentsMap items={results} />
           <ItemsTable items={results} />
           <ItemPager
             pageSize={num}
