@@ -1,7 +1,7 @@
 import React from 'react';
 import Router from 'next/router';
 import { Alert } from 'reactstrap';
-import { searchItems } from '@esri/arcgis-rest-items';
+import { searchItems } from '@esri/arcgis-rest-portal';
 import ItemsLayout from '../components/ItemsLayout';
 
 class Items extends React.Component {
@@ -13,7 +13,8 @@ class Items extends React.Component {
   static async getInitialProps({ pathname, query }, authentication) {
     const defaults = {
       num: 10,
-      start: 1
+      start: 1,
+      authentication: authentication
     };
     const searchForm = { ...defaults, ...query };
     if (!searchForm.q) {
@@ -27,10 +28,7 @@ class Items extends React.Component {
       };
     }
     // execute search and update state
-    return searchItems({
-      searchForm,
-      authentication
-    })
+    return searchItems(searchForm)
       .then(({ results, total }) => {
         return {
           pathname,
