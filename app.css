@@ -1,6 +1,6 @@
 /* import esri styles */
 /* TODO: these should be lazy loaed by esri-loader's loadModules() */
-@import url('https://js.arcgis.com/4.10/esri/css/main.css');
+@import url('https://js.arcgis.com/4.11/esri/css/main.css');
 
 /* global styles */
 body {
