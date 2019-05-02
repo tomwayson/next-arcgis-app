@@ -3,6 +3,7 @@ import Router from 'next/router';
 import { Alert } from 'reactstrap';
 import { searchItems } from '@esri/arcgis-rest-portal';
 import ItemsLayout from '../components/ItemsLayout';
+import getConfig from 'next/config';
 
 class Items extends React.Component {
   // this is called on the server for initial render
@@ -14,6 +15,7 @@ class Items extends React.Component {
     const defaults = {
       num: 10,
       start: 1,
+      portal: getConfig().publicRuntimeConfig.portal,
       authentication: authentication
     };
     const searchForm = { ...defaults, ...query };
